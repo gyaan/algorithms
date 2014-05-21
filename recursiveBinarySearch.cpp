@@ -1,7 +1,15 @@
-//binaryseach.cpp
+/*
+ * recursiveBinarySearch.cpp
+ * Created on: 22-May-2014
+ * Author: Gyaneshwar Pardhi
+ */
+
+
 #include<iostream>
 #include<vector>
 using namespace std;
+
+//order array class
 
 class ordArray {
 
@@ -15,14 +23,17 @@ public:
 		nElems = 0;
 	}
 
+	//return the size of array
 	int getSize() {
 		return nElems;
 	}
 
+	//find a key in order array
 	int find(double searchKey) {
 		return recFind(searchKey, 0, nElems - 1);
 	}
 
+   // recursive binary search function
 	int recFind(double searchKey, int lowerBound, int upperBound) {
 		int curIn;
 
@@ -45,6 +56,7 @@ public:
 
 	}
 
+	//insert elements in order array
 	void insert(double value){
 		int j;
 		for(j=0;j<nElems;j++){
@@ -71,6 +83,7 @@ public:
 
 int main(){
 
+	//add elements in key
 	int maxSize = 100;
 	ordArray arr(maxSize);
 	arr.insert(72);
@@ -90,12 +103,12 @@ int main(){
 	arr.insert(63);
 	arr.insert(36);
 
-	int searchKey = 207;
+	//search key
+	int searchKey = 36;
 
 	if(arr.find(searchKey)!=arr.getSize())
 		cout<<"found"<<endl;
 	else
-		cout<<"can'f found"<<endl;
+		cout<<"can't found"<<endl;
 	return 0;
-
 }
