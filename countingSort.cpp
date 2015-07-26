@@ -14,14 +14,14 @@ int main() {
 		hmap[i] = 0;
 	}
 
-	//count each elements
+	//count each element
 	for (int i = 0; i <= size - 1; i++) {
 		if (hmap.find(arr[i]) != hmap.end()) {
 			hmap[arr[i]] = hmap[arr[i]] + 1;
 		}
 	}
 
-	//how many elements before each elements
+	//how many elements before each element
 	for (int j = 2; j <= range; j++) {
 		hmap[j] = hmap[j] + hmap[j - 1];
 	}
